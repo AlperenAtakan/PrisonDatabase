@@ -27,7 +27,8 @@ public class cellWiew2 extends  JFrame{
         DışPanel.setVisible(true);
         setSize(900,540);
         setLocation(500,200);
-        setTitle("Guard Table");
+        setTitle("Hücreler");
+        cellWiew2.setDefaultLookAndFeelDecorated(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         returnBackButton.addActionListener(new ActionListener() {
             @Override
@@ -50,6 +51,7 @@ public class cellWiew2 extends  JFrame{
         CELL1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 cellID=1;
                 cellSize=10;
                 cellCapacity=2;
@@ -64,17 +66,15 @@ public class cellWiew2 extends  JFrame{
 
                 cellDetailWiew=new cellDetailWiew();
                 setVisible(false);
-                cellDetailWiew.CreateTable();
                 cellDetailWiew.setVisible(true);
+                cellDetailWiew.CreateTable();
 
             }
         });
         CELL2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cellDetailWiew=new cellDetailWiew();
-                setVisible(false);
-                cellDetailWiew.setVisible(true);
+
 
                 cellID=2;
                 cellSize=15;
@@ -87,15 +87,17 @@ public class cellWiew2 extends  JFrame{
                 cellDetaildatas[2]=cellCapacity;
                 cellDetaildatas[3]=cell_Stuff_count;
                 cellDetaildatas[4]=cell_Prisoner_count;
+
+                cellDetailWiew=new cellDetailWiew();
+                setVisible(false);
+                cellDetailWiew.setVisible(true);
                 cellDetailWiew.CreateTable();
             }
         });
         CELL3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cellDetailWiew=new cellDetailWiew();
-                setVisible(false);
-                cellDetailWiew.setVisible(true);
+
                 cellID=3;
                 cellSize=20;
                 cellCapacity=4;
@@ -107,6 +109,10 @@ public class cellWiew2 extends  JFrame{
                 cellDetaildatas[2]=cellCapacity;
                 cellDetaildatas[3]=cell_Stuff_count;
                 cellDetaildatas[4]=cell_Prisoner_count;
+
+                cellDetailWiew=new cellDetailWiew();
+                setVisible(false);
+                cellDetailWiew.setVisible(true);
                 cellDetailWiew.CreateTable();
             }
         });
@@ -114,9 +120,7 @@ public class cellWiew2 extends  JFrame{
         CELL4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cellDetailWiew=new cellDetailWiew();
-                setVisible(false);
-                cellDetailWiew.setVisible(true);
+
                 cellID=4;
                 cellSize=25;
                 cellCapacity=5;
@@ -128,15 +132,17 @@ public class cellWiew2 extends  JFrame{
                 cellDetaildatas[2]=cellCapacity;
                 cellDetaildatas[3]=cell_Stuff_count;
                 cellDetaildatas[4]=cell_Prisoner_count;
+
+                cellDetailWiew=new cellDetailWiew();
+                setVisible(false);
+                cellDetailWiew.setVisible(true);
                 cellDetailWiew.CreateTable();
             }
         });
         CELL5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cellDetailWiew=new cellDetailWiew();
-                setVisible(false);
-                cellDetailWiew.setVisible(true);
+
                 cellID=5;
                 cellSize=30;
                 cellCapacity=6;
@@ -148,15 +154,17 @@ public class cellWiew2 extends  JFrame{
                 cellDetaildatas[2]=cellCapacity;
                 cellDetaildatas[3]=cell_Stuff_count;
                 cellDetaildatas[4]=cell_Prisoner_count;
+
+                cellDetailWiew=new cellDetailWiew();
+                setVisible(false);
+                cellDetailWiew.setVisible(true);
                 cellDetailWiew.CreateTable();
             }
         });
         CELL6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cellDetailWiew=new cellDetailWiew();
-                setVisible(false);
-                cellDetailWiew.setVisible(true);
+
                 cellID=6;
                 cellSize=15;
                 cellCapacity=3;
@@ -168,15 +176,17 @@ public class cellWiew2 extends  JFrame{
                 cellDetaildatas[2]=cellCapacity;
                 cellDetaildatas[3]=cell_Stuff_count;
                 cellDetaildatas[4]=cell_Prisoner_count;
+
+                cellDetailWiew=new cellDetailWiew();
+                setVisible(false);
+                cellDetailWiew.setVisible(true);
                 cellDetailWiew.CreateTable();
             }
         });
         CELL7.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cellDetailWiew=new cellDetailWiew();
-                setVisible(false);
-                cellDetailWiew.setVisible(true);
+
                 cellID=7;
                 cellSize=15;
                 cellCapacity=3;
@@ -188,15 +198,17 @@ public class cellWiew2 extends  JFrame{
                 cellDetaildatas[2]=cellCapacity;
                 cellDetaildatas[3]=cell_Stuff_count;
                 cellDetaildatas[4]=cell_Prisoner_count;
+
+                cellDetailWiew=new cellDetailWiew();
+                setVisible(false);
+                cellDetailWiew.setVisible(true);
                 cellDetailWiew.CreateTable();
             }
         });
         CELL8.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cellDetailWiew=new cellDetailWiew();
-                setVisible(false);
-                cellDetailWiew.setVisible(true);
+
                 cellID=8;
                 cellSize=15;
                 cellCapacity=3;
@@ -208,6 +220,10 @@ public class cellWiew2 extends  JFrame{
                 cellDetaildatas[2]=cellCapacity;
                 cellDetaildatas[3]=cell_Stuff_count;
                 cellDetaildatas[4]=cell_Prisoner_count;
+
+                cellDetailWiew=new cellDetailWiew();
+                setVisible(false);
+                cellDetailWiew.setVisible(true);
                 cellDetailWiew.CreateTable();
             }
         });

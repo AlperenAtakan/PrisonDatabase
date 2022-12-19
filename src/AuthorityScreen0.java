@@ -23,7 +23,7 @@ public class AuthorityScreen0  extends JFrame{
         add(panel1);
         setSize(900,540);
         setLocation(500,200);
-        setTitle("Author Level: WARDEN");
+        setTitle("Yetki Seviyesi : Müdür");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         CreateAuthorTable();
 
@@ -52,10 +52,10 @@ public class AuthorityScreen0  extends JFrame{
                 if (selected == -1) {
 
                     if (model.getRowCount() == 0) {
-                        messageLabel.setText("Empty Table");
+                        messageLabel.setText("Tablo Boş !");
                     }
                     else {
-                        messageLabel.setText("Select table to go!");
+                        messageLabel.setText("Öncelikle Tablo Seçin");
                     }
                 }else{
                     tableClicked = true;
@@ -72,34 +72,34 @@ public class AuthorityScreen0  extends JFrame{
             public void actionPerformed(ActionEvent e) {
 
 
-                if (tableRowName.equals("Authorities")){
+                if (tableRowName.equals("Yetkililer")){
 
 
-                } else if (tableRowName.equals("Prisoners")) {
+                } else if (tableRowName.equals("Mahkumlar")) {
 
                     prisonerWiew prisonerWiew = new prisonerWiew();
                     setVisible(false);
                     prisonerWiew.setVisible(true);
 
-                } else if (tableRowName.equals("Cells")) {
+                } else if (tableRowName.equals("Hücreler")) {
 
                     cellWiew2 cellWiew2=new cellWiew2();
                     setVisible(false);
                     cellWiew2.setVisible(true);
 
-                } else if (tableRowName.equals("Personels")) {
+                } else if (tableRowName.equals("Personeller")) {
 
-                } else if (tableRowName.equals("Food")) {
+                } else if (tableRowName.equals("Yemekler")) {
 
-                } else if (tableRowName.equals("Expense")) {
+                } else if (tableRowName.equals("Giderler")) {
                     
-                } else if (tableRowName.equals("Guards")) {
+                } else if (tableRowName.equals("Gardiyanlar")) {
                     guardWiew guardWiew = new guardWiew();
                     setVisible(false);
                     guardWiew.setVisible(true);
 
                 } else {
-                    messageLabel.setText("Select Table to Go!");
+                    messageLabel.setText("Öncelikle Bir Tablo Seçin !");
                 }
 
 
@@ -110,16 +110,17 @@ public class AuthorityScreen0  extends JFrame{
 
         model = (DefaultTableModel) table1.getModel();
         String[] columnNames = {
-                "                                               PRISON'S DEPARTMANTS"
+                " "
         };
+
         String[] rawNames={
-                "Authorities",
-                "Prisoners",
-                "Cells",
-                "Guards",
-                "Personels",
-                "Food",
-                "Expense"
+                "Yetkililer",
+                "Mahkumlar",
+                "Hücreler",
+                "Gardiyanlar",
+                "Personeller",
+                "Yemekler",
+                "Giderler"
         };
 
         model.setColumnIdentifiers(columnNames);

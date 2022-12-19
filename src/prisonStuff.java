@@ -327,32 +327,25 @@ public class prisonStuff {
 
         try {
             statement = con.createStatement();
+            System.out.println(1);
 
-            String sorgu="Select * From guard";
+            String sorguGuard="Select * From guard";
 
-            ResultSet rs=statement.executeQuery(sorgu);
+            ResultSet rs=statement.executeQuery(sorguGuard);
 
             while (rs.next()){
-                int id=rs.getInt("idguard");
 
+                int id=rs.getInt("idguards");
                 String name=rs.getString("guard_name");
-
                 String surname=rs.getString("guard_surname");
-
                 String rank=rs.getString("guard_rank");
-
                 int weight=rs.getInt("guard_weight");
-
                 int height=rs.getInt("guard_height");
-
                 int age=rs.getInt("guard_age");
 
-
-
                 guard_data.add(new Guard(id,name,surname,rank,weight,height,age));
-
-
             }
+
             return guard_data;
 
         } catch (SQLException e) {
@@ -362,6 +355,7 @@ public class prisonStuff {
 
 
     }
+
 
 
     public void addCell(int size,int capacity,int stuffCount,int prisonerCount){
@@ -451,6 +445,8 @@ public class prisonStuff {
 
     }
 
+
+
     public ArrayList<Prisoner> getCellPrisoner(int cellID){
         ArrayList<Prisoner> cellPrisoners=new ArrayList<Prisoner>();
 
@@ -458,12 +454,10 @@ public class prisonStuff {
 
             String cellPrisonerSorgu="Select * from prisoner where prisoner_Cell_ID=?";
 
-            System.out.println("okey");
             preparedStatement =con.prepareStatement(cellPrisonerSorgu);
             preparedStatement.setInt(1,cellID);
 
             ResultSet rs=preparedStatement.executeQuery();
-            System.out.println("okey1");
             while (rs.next()){
                 int id=rs.getInt("idprisoner");
 
