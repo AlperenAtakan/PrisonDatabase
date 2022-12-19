@@ -83,9 +83,9 @@ public class AuthorityScreen0  extends JFrame{
 
                 } else if (tableRowName.equals("Cells")) {
 
-                    cellView cellView= new cellView();
+                    cellWiew2 cellWiew2=new cellWiew2();
                     setVisible(false);
-                    cellView.setVisible(true);
+                    cellWiew2.setVisible(true);
 
                 } else if (tableRowName.equals("Personels")) {
 

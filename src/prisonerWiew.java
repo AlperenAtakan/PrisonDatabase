@@ -110,7 +110,7 @@ public class prisonerWiew extends  JFrame {
 
                     int age= (int) model.getValueAt(selected, 7);
 
-                    int gender=1;
+                    int gender;
                     if ( model.getValueAt(selected, 8).equals("Male")){
                         gender=1;
 
@@ -118,7 +118,7 @@ public class prisonerWiew extends  JFrame {
                         gender=0;
                     }
 
-                    System.out.println(gender);
+
                     int punishmenttime= (int) model.getValueAt(selected, 9);
 
 

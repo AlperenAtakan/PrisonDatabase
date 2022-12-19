@@ -2,7 +2,9 @@ public class Prisoner {
    private int prisonerID,weight,height,age,punishmenTime;
    private String prisonerName,prisonerLastName,gender,TC,releaseDate;
 
-    public Prisoner(int prisonerID,String prisonerName, String prisonerLastName, int height, int weight, String releaseDate, String TC, int age,String gender ,int punishmenTime ) {
+   private byte[] image;
+
+    public Prisoner(int prisonerID,String prisonerName, String prisonerLastName, int height, int weight, String releaseDate, String TC, int age,String gender ,int punishmentTime , byte[] image) {
         this.prisonerID = prisonerID;
         this.weight = weight;
         this.height = height;
@@ -13,6 +15,7 @@ public class Prisoner {
         this.gender = gender;
         this.TC = TC;
         this.releaseDate = releaseDate;
+        this.image=image;
     }
 
     public int getPrisonerID() {
@@ -25,6 +28,14 @@ public class Prisoner {
 
     public int getWeight() {
         return weight;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 
     public void setWeight(int weight) {

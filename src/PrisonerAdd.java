@@ -1,6 +1,11 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 
 public class PrisonerAdd extends JFrame{
     private JPanel DışPanel;
@@ -16,8 +21,13 @@ public class PrisonerAdd extends JFrame{
     private JTextField prisonerGender;
     private JTextField prisonerPunishmentTime;
     private JLabel messageLabel;
+    private JButton chooseImageButton;
+    private JPanel prisonerImageField;
+    private JLabel imageLabel;
 
     prisonStuff stuff =new prisonStuff();
+    String fileName=null;
+    byte[] prisonerImage=null;
 
     public PrisonerAdd(){
 
@@ -33,6 +43,7 @@ public class PrisonerAdd extends JFrame{
 
                 messageLabel.setText("");
 
+
                 String name= prisonerName.getText();
                 String lastname=prisonerLastName.getText();
                 int height= Integer.parseInt(prisonerHeight.getText());
@@ -42,9 +53,12 @@ public class PrisonerAdd extends JFrame{
                 int age= Integer.parseInt(prisonerAge.getText());
                 int gender= Integer.parseInt(prisonerGender.getText());
                 int punishmentTime= Integer.parseInt(prisonerPunishmentTime.getText());
+                byte[] image=prisonerImage;
 
 
-                stuff.addPrisoner(name,lastname,height,weight,releaseDate,TC,age,gender,punishmentTime);
+
+
+                stuff.addPrisoner(name,lastname,height,weight,releaseDate,TC,age,gender,punishmentTime,image);
 
 
                 messageLabel.setText("Adding was successfull!");
@@ -59,6 +73,39 @@ public class PrisonerAdd extends JFrame{
                 setVisible(false);
                 prisonerWiew prisonerWiew= new prisonerWiew();
                 prisonerWiew.setVisible(true);
+            }
+        });
+        chooseImageButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                JFileChooser chooser=new JFileChooser();
+
+                chooser.showOpenDialog(null);
+                File file=chooser.getSelectedFile();
+
+                    fileName=file.getAbsolutePath();
+                    ImageIcon imageIcon=new ImageIcon(new ImageIcon(fileName).getImage().getScaledInstance(prisonerImageField.getWidth(),prisonerImageField.getHeight(), Image.SCALE_SMOOTH));
+                    imageLabel.setIcon(imageIcon);
+                    try{
+                        File image=new File(fileName);
+                        FileInputStream inputStream=new FileInputStream(image);
+                        ByteArrayOutputStream bos=new ByteArrayOutputStream();
+                        byte[] buf = new byte[1024];
+
+                        for (int readNum;(readNum=inputStream.read(buf))!=-1;){
+                            bos.write(buf,0,readNum);
+                        }
+                        prisonerImage=bos.toByteArray();
+
+                    }catch (Exception exception){
+                    messageLabel.setText("Resim Eklenirken Sıkıntı Oluştu");
+                    exception.printStackTrace();
+                }
+
+
+
+
             }
         });
     }

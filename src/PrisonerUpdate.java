@@ -21,8 +21,8 @@ public class PrisonerUpdate extends JFrame{
     private JButton updateButton;
     private JButton returnButton;
     private JTextField prisonerLastname;
-
-
+    private JLabel imageLabel;
+    private JPanel prisonerImageField;
 
 
     public PrisonerUpdate(){
@@ -43,7 +43,6 @@ public class PrisonerUpdate extends JFrame{
         prisonerTC.setText((String) prisonerWiew.prisonerDatas[6]);
         prisonerAge.setText(prisonerWiew.prisonerDatas[7].toString());
 
-        System.out.println(prisonerWiew.prisonerDatas[8].getClass());
         if (prisonerWiew.prisonerDatas[8].equals("1")){
 
             prisonerGender.setText("Male");
@@ -51,6 +50,8 @@ public class PrisonerUpdate extends JFrame{
             prisonerGender.setText("Female");}
 
         prisonerPunishmenttime.setText(prisonerWiew.prisonerDatas[9].toString());
+
+
 
         updateButton.addActionListener(new ActionListener() {
             @Override

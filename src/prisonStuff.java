@@ -126,9 +126,9 @@ public class prisonStuff {
     }
 
 
-    public void addPrisoner(String name,String lastname,int height,int weight,String releaseDate,String TC,int age,int gender,int punishmentTime) {
+    public void addPrisoner(String name,String lastname,int height,int weight,String releaseDate,String TC,int age,int gender,int punishmentTime,byte[] image) {
 
-        String sorgu = "Insert Into prisoner(prisoner_name,prisoner_surname,prisoner_height,prisoner_weight,prisoner_release_date,prisoner_TC,prisoner_age,prisoner_gender,prisoner_punishment_time) VALUES(?,?,?,?,?,?,?,?,?)";
+        String sorgu = "Insert Into prisoner(prisoner_name,prisoner_surname,prisoner_height,prisoner_weight,prisoner_photo,prisoner_release_date,prisoner_TC,prisoner_age,prisoner_gender,prisoner_punishment_time) VALUES(?,?,?,?,?,?,?,?,?,?)";
 
         try {
             preparedStatement = con.prepareStatement(sorgu);
@@ -138,17 +138,19 @@ public class prisonStuff {
             preparedStatement.setString(2, lastname);
             preparedStatement.setInt(3, height);
             preparedStatement.setInt(4, weight);
-            preparedStatement.setString(5, releaseDate);
-            preparedStatement.setString(6, TC);
-            preparedStatement.setInt(7, age);
+            preparedStatement.setString(6, releaseDate);
+            preparedStatement.setString(7, TC);
+            preparedStatement.setInt(8, age);
             boolean gender1;
             if (gender==1){
                 gender1=true;
             }else {
                 gender1=false;
             }
-            preparedStatement.setBoolean(8,gender1 );
-            preparedStatement.setInt(9, punishmentTime);
+            preparedStatement.setBoolean(9,gender1 );
+            preparedStatement.setInt(10, punishmentTime);
+            preparedStatement.setBytes(5,image);
+
 
             preparedStatement.executeUpdate();
 
@@ -241,7 +243,8 @@ public class prisonStuff {
 
                 int punishmentTime=rs.getInt("prisoner_punishment_time");
 
-                data.add(new Prisoner(id,name,surname,height,weight,releaseDate,TC,age,gender,punishmentTime));
+                byte[] image = rs.getBytes("prisoner_photo");
+                data.add(new Prisoner(id,name,surname,height,weight,releaseDate,TC,age,gender,punishmentTime,image));
 
 
             }
@@ -448,6 +451,55 @@ public class prisonStuff {
 
     }
 
+    public ArrayList<Prisoner> getCellPrisoner(int cellID){
+        ArrayList<Prisoner> cellPrisoners=new ArrayList<Prisoner>();
+
+        try {
+
+            String cellPrisonerSorgu="Select * from prisoner where prisoner_Cell_ID=?";
+
+            System.out.println("okey");
+            preparedStatement =con.prepareStatement(cellPrisonerSorgu);
+            preparedStatement.setInt(1,cellID);
+
+            ResultSet rs=preparedStatement.executeQuery();
+            System.out.println("okey1");
+            while (rs.next()){
+                int id=rs.getInt("idprisoner");
+
+                String name=rs.getString("prisoner_name");
+
+                String surname=rs.getString("prisoner_surname");
+
+                int height=rs.getInt("prisoner_height");
+
+                int weight=rs.getInt("prisoner_weight");
+
+                String releaseDate= String.valueOf(rs.getDate("prisoner_release_date"));
+
+                String TC=rs.getString("prisoner_TC");
+
+                int age=rs.getInt("prisoner_age");
+
+                String gender;
+                if (rs.getBoolean("prisoner_gender")){
+                    gender="Male";
+                }else {
+                    gender="Female";
+                }
+
+                int punishmentTime=rs.getInt("prisoner_punishment_time");
+                byte[] image=rs.getBytes("prisoner_photo");
+                cellPrisoners.add(new Prisoner(id,name,surname,height,weight,releaseDate,TC,age,gender,punishmentTime,image));
+            }
+            return cellPrisoners;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
 
 
 }

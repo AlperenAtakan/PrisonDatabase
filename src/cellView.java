@@ -17,6 +17,7 @@ public class cellView extends JFrame{
     public static Object[] cellDatas= new Object[5];
     DefaultTableModel model;
     prisonStuff stuff= new prisonStuff();
+    static int id;
     public cellView(){
         model = (DefaultTableModel) cellTable.getModel();
         add(Dışpanel);
@@ -131,7 +132,7 @@ public class cellView extends JFrame{
                     }
                 }else {
 
-                    int id=(int)model.getValueAt(selected,0);
+                    id=(int)model.getValueAt(selected,0);
 
                     stuff.deleteCell(id);
                     CreateTable();
