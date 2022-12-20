@@ -30,7 +30,7 @@ public class PrisonerUpdate extends JFrame{
         add(Dışpanel);
         setSize(900,540);
         setLocation(500,200);
-        setTitle("Prison Update");
+        setTitle("Mahkum Güncelleme/Görüntüleme");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
@@ -45,9 +45,9 @@ public class PrisonerUpdate extends JFrame{
 
         if (prisonerWiew.prisonerDatas[8].equals("1")){
 
-            prisonerGender.setText("Male");
+            prisonerGender.setText("Erkek");
         }else {
-            prisonerGender.setText("Female");}
+            prisonerGender.setText("Kadın");}
 
         prisonerPunishmenttime.setText(prisonerWiew.prisonerDatas[9].toString());
 

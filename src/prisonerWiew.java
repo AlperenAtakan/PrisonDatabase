@@ -232,8 +232,6 @@ public class prisonerWiew extends  JFrame {
 
         getPrisoner();
 
-
-
     }
 
     public void getPrisoner(){
@@ -256,8 +254,6 @@ public class prisonerWiew extends  JFrame {
             }
 
         }
-
-
 
 
     }

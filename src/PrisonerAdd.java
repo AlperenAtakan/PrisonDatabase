@@ -57,7 +57,6 @@ public class PrisonerAdd extends JFrame{
                         messageLabel.setText("Resimsiz Ekleme Yapıldı!");
                     }
 
-
                     stuff.addPrisoner(name,lastname,height,weight,releaseDate,TC,age,gender,punishmentTime,image);
 
                     messageLabel.setText("Ekleme Başarılı");
@@ -107,9 +106,6 @@ public class PrisonerAdd extends JFrame{
                     messageLabel.setText("Resim Eklenirken Sıkıntı Oluştu");
                     exception.printStackTrace();
                 }
-
-
-
 
             }
         });
