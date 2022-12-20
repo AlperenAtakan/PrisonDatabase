@@ -33,7 +33,7 @@ public class prisonerWiew extends  JFrame {
         DışPanel.setVisible(true);
         setSize(900,540);
         setLocation(500,200);
-        setTitle("Prisoner Table");
+        setTitle("Mahkum Tablosu");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         CreateTable();
 
@@ -250,7 +250,7 @@ public class prisonerWiew extends  JFrame {
                 Object[]add={prisoner.getPrisonerID(),prisoner.getPrisonerName(),prisoner.getPrisonerLastName(),
                 prisoner.getHeight(),prisoner.getWeight(),prisoner.getReleaseDate(),prisoner.getTC(),prisoner.getAge(),prisoner.getGender(),prisoner.getPunishmenTime()};
 
-
+                Object[] tablo1={prisoner.getPrisonerID(),prisoner.getPrisonerName(),prisoner.getPrisonerLastName()};
                 model.addRow(add);
 
             }

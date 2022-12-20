@@ -41,27 +41,31 @@ public class PrisonerAdd extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                messageLabel.setText("");
+
+                try {
+                    String name= prisonerName.getText();
+                    String lastname=prisonerLastName.getText();
+                    int height= Integer.parseInt(prisonerHeight.getText());
+                    int weight= Integer.parseInt(prisonerWeight.getText());
+                    String releaseDate=prisonerReleaseDate.getText();
+                    String TC=prisonerTC.getText();
+                    int age= Integer.parseInt(prisonerAge.getText());
+                    int gender= Integer.parseInt(prisonerGender.getText());
+                    int punishmentTime= Integer.parseInt(prisonerPunishmentTime.getText());
+                    byte[] image=prisonerImage;
+                    if (image==null){
+                        messageLabel.setText("Resimsiz Ekleme Yapıldı!");
+                    }
 
 
-                String name= prisonerName.getText();
-                String lastname=prisonerLastName.getText();
-                int height= Integer.parseInt(prisonerHeight.getText());
-                int weight= Integer.parseInt(prisonerWeight.getText());
-                String releaseDate=prisonerReleaseDate.getText();
-                String TC=prisonerTC.getText();
-                int age= Integer.parseInt(prisonerAge.getText());
-                int gender= Integer.parseInt(prisonerGender.getText());
-                int punishmentTime= Integer.parseInt(prisonerPunishmentTime.getText());
-                byte[] image=prisonerImage;
+                    stuff.addPrisoner(name,lastname,height,weight,releaseDate,TC,age,gender,punishmentTime,image);
 
+                    messageLabel.setText("Ekleme Başarılı");
+                }catch (NumberFormatException exception){
+                    messageLabel.setText("Ekleme Başarısız. Lütfen Alanları Doldurun!");
+                    exception.printStackTrace();
+                }
 
-
-
-                stuff.addPrisoner(name,lastname,height,weight,releaseDate,TC,age,gender,punishmentTime,image);
-
-
-                messageLabel.setText("Adding was successfull!");
 
 
             }
@@ -97,6 +101,7 @@ public class PrisonerAdd extends JFrame{
                             bos.write(buf,0,readNum);
                         }
                         prisonerImage=bos.toByteArray();
+                        messageLabel.setText("Resim Başarıyla Seçildi");
 
                     }catch (Exception exception){
                     messageLabel.setText("Resim Eklenirken Sıkıntı Oluştu");

@@ -89,7 +89,11 @@ public class AuthorityScreen0  extends JFrame{
 
                 } else if (tableRowName.equals("Personeller")) {
 
+
+
+
                 } else if (tableRowName.equals("Yemekler")) {
+
 
                 } else if (tableRowName.equals("Giderler")) {
                     

@@ -496,4 +496,98 @@ public class prisonStuff {
     }
 
 
+    public void deleteEmployee(int id){
+        String sorgu = "Delete from employee where idemployee = ?";
+
+        try {
+            preparedStatement = con.prepareStatement(sorgu);
+            preparedStatement.setInt(1, id);
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException ex) {
+            System.out.println("Silme Başarısız");
+            Logger.getLogger(prisonStuff.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void addEmployee(String name,String lastname,String department,String authority,String job) {
+
+        String sorgu = "Insert Into employee(employee_name,employee_surname,employee_department,employee_authority,employee_job,employee_id) VALUES(?,?,?,?,?,?)";
+
+        try {
+            preparedStatement = con.prepareStatement(sorgu);
+
+
+            preparedStatement.setString(1, name);
+            preparedStatement.setString(2, lastname);
+            preparedStatement.setString(3, department);
+            preparedStatement.setString(4, authority);
+            preparedStatement.setString(5, job);
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException ex) {
+            System.out.println("Ekleme Başarısız!");
+            Logger.getLogger(prisonStuff.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    public void updateEmployee(int id ,String name,String lastname,String department,String authority,String job) {
+        String sorgu =  "Update employee set employee_name = ? , employee_surname = ? , employee_department = ? , employee_authority = ?, employee_job = ?  idemployee = ?";
+
+        try {
+            preparedStatement = con.prepareStatement(sorgu);
+
+
+            preparedStatement.setString(1, name);
+            preparedStatement.setString(2, lastname);
+            preparedStatement.setString(3, department);
+            preparedStatement.setString(4, authority);
+            preparedStatement.setString(5, job);
+            preparedStatement.setInt(6,id);
+
+            preparedStatement.executeUpdate();
+
+
+
+        } catch (SQLException ex) {
+            System.out.println("Update Başarısız");
+            Logger.getLogger(prisonStuff.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    public ArrayList<Employee> getEmployees(){
+
+        ArrayList<Employee> data=new ArrayList<Employee>();
+
+        try {
+            statement = con.createStatement();
+
+            String sorgu="Select * From employee";
+
+            ResultSet rs=statement.executeQuery(sorgu);
+
+            while (rs.next()){
+                int id=rs.getInt("idemployee");
+
+                String name=rs.getString("employee_name");
+
+                String surname=rs.getString("employee_surname");
+
+                String department=rs.getString("employee_department");
+
+                String authority=rs.getString("employee_authority");
+
+                String job= rs.getString("employee_job");
+
+                data.add(new Employee(id,name,surname,department,authority,job));
+
+            }
+            return data;
+
+        } catch (SQLException e) {
+            System.out.println("Employee Veritabanına ulaşılamadı");
+            return null;
+        }
+    }
 }

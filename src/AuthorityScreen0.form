@@ -95,7 +95,7 @@
                   <columnSelectionAllowed value="true"/>
                   <focusable value="true"/>
                   <font name="Times New Roman" size="28" style="1"/>
-                  <foreground color="-4735042"/>
+                  <foreground color="-4473925"/>
                   <gridColor color="-10395037"/>
                   <intercellSpacing width="300" height="1"/>
                   <minimumSize width="30" height="100"/>
@@ -118,6 +118,7 @@
             <properties>
               <background color="-10395037"/>
               <font name="Times New Roman" size="16" style="1"/>
+              <foreground color="-4473925"/>
               <text value=""/>
             </properties>
           </component>
