@@ -151,23 +151,13 @@ public class prisonStuff {
             preparedStatement.setInt(10, punishmentTime);
             preparedStatement.setBytes(5,image);
 
-
             preparedStatement.executeUpdate();
-
-
-
 
 
         } catch (SQLException ex) {
             System.out.println("Ekleme Başarısız!");
             Logger.getLogger(prisonStuff.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-
-
-
-
-
     }
 
     public void updatePrisoner(int id ,String name,String lastname,int height,int weight,String releaseDate,String TC,int age,String gender,int punishmentTime) {
@@ -287,7 +277,7 @@ public class prisonStuff {
     public  void updateGuard(int id,String name, String lastName,String rank,int weight, int height,int age){
 
 
-        String guardsorgu =  "Update guard set guard_name = ? , guard_surname = ? , guard_rank = ? , guard_weight = ?, guard_height = ? , guard_age = ? where idguard = ?";
+        String guardsorgu =  "Update guard set guard_name = ? , guard_surname = ? , guard_rank = ? , guard_weight = ?, guard_height = ? , guard_age = ? where idguards = ?";
 
         try {
             preparedStatement=con.prepareStatement(guardsorgu);

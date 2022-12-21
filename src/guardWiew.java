@@ -28,7 +28,7 @@ public class guardWiew extends JFrame{
         Dışpanel.setVisible(true);
         setSize(900,540);
         setLocation(500,200);
-        setTitle("Guard Table");
+        setTitle("Gardiyan Ekranı");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         CreateTable();
         returnBackButton.addMouseListener(new MouseAdapter() {
@@ -82,7 +82,7 @@ public class guardWiew extends JFrame{
                     guardUpdate.setVisible(true);
                 }else {
 
-                    messageLabel.setText("First Selecet Guard Then Click Update!");
+                    messageLabel.setText("Önce Gardiyan Seç!");
                 }
 
             }
@@ -99,10 +99,10 @@ public class guardWiew extends JFrame{
                 if (selected == -1) {
 
                     if (model.getRowCount() == 0) {
-                        messageLabel.setText("Empty Table");
+                        messageLabel.setText("Tablo Boş!");
                     }
                     else {
-                        messageLabel.setText("Select prisoner to update!");
+                        messageLabel.setText("Önce Gardiyan Seç!");
                     }
                 }else {
 
@@ -130,7 +130,7 @@ public class guardWiew extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                messageLabel.setText("");
+                messageLabel.setText(" ");
 
                 model = (DefaultTableModel) guardTable.getModel();
                 int selected=guardTable.getSelectedRow();
@@ -138,10 +138,10 @@ public class guardWiew extends JFrame{
                 if (selected == -1) {
 
                     if (model.getRowCount() == 0) {
-                        messageLabel.setText("Empty Table");
+                        messageLabel.setText("Tablo Boş!");
                     }
                     else {
-                        messageLabel.setText("First select guard then click delete!");
+                        messageLabel.setText("Önce Gardiyan Seç !");
                     }
                 }else {
 
@@ -150,7 +150,7 @@ public class guardWiew extends JFrame{
                     stuff.deleteGuard(id);
                     CreateTable();
 
-                    messageLabel.setText("Cell deleted succesfully!");
+                    messageLabel.setText("Gardiyan Başarıyla Silindi!");
 
 
                 }
@@ -161,13 +161,13 @@ public class guardWiew extends JFrame{
 
     public void CreateTable(){
         String[] columnNames = {
-                "GuardID",      //int
-                "First Name",   //String
-                "Last Name",    //String
-                "Rank",         //String
-                "Weight",       //int
-                "Height",       //int
-                "Age"           //int
+                "GardiyanID",      //int
+                "Ad",   //String
+                "Soyad",    //String
+                "Yetki",         //String
+                "Kilo",       //int
+                "Boy",       //int
+                "Yaş"           //int
 
         };
         model.setColumnIdentifiers(columnNames);

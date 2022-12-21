@@ -66,7 +66,7 @@ public class prisonerWiew extends  JFrame {
                 setVisible(false);
                 prisonerUpdate.setVisible(true);
             }else {
-                    messageLabel.setText("Select Prisoner Then Click Update Button!");
+                    messageLabel.setText("Güncellemek için mahkum seç!");
                 }
 
             }
@@ -85,10 +85,10 @@ public class prisonerWiew extends  JFrame {
                 if (selected == -1) {
 
                     if (model.getRowCount() == 0) {
-                        messageLabel.setText("Empty Table");
+                        messageLabel.setText("Tablo Boş!");
                     }
                     else {
-                        messageLabel.setText("Select prisoner to update!");
+                        messageLabel.setText("Güncellemek İçin Mahkum Seç!");
                     }
                 }else {
 
@@ -111,7 +111,7 @@ public class prisonerWiew extends  JFrame {
                     int age= (int) model.getValueAt(selected, 7);
 
                     int gender;
-                    if ( model.getValueAt(selected, 8).equals("Male")){
+                    if ( model.getValueAt(selected, 8).equals("Erkek")){
                         gender=1;
 
                     }else {
@@ -122,19 +122,6 @@ public class prisonerWiew extends  JFrame {
                     int punishmenttime= (int) model.getValueAt(selected, 9);
 
 
-
-/*
-                    System.out.println(ID);
-                    System.out.println(name);
-                    System.out.println(lastname);
-                    System.out.println(height);
-                    System.out.println(weight);
-                    System.out.println(releaseDate);
-                    System.out.println(TC);
-                    System.out.println(age);
-                    System.out.println(punishmenttime);
-
- */
                     prisonerDatas[0] =ID;
                     prisonerDatas[1] =name;
                     prisonerDatas[2] =lastname;
@@ -164,10 +151,10 @@ public class prisonerWiew extends  JFrame {
                 if (selected == -1) {
 
                     if (model.getRowCount() == 0) {
-                        messageLabel.setText("Empty Table");
+                        messageLabel.setText("Tablo Boş!");
                     }
                     else {
-                        messageLabel.setText("First select prisoner then click delete!");
+                        messageLabel.setText("Önce mahkum seçiniz!");
                     }
                 }else {
 
@@ -176,7 +163,7 @@ public class prisonerWiew extends  JFrame {
                     stuff.deletePrisoner(id);
                     CreateTable();
 
-                    messageLabel.setText("Prisoner deleted succesfully!");
+                    messageLabel.setText("Mahkum Başarıyla Silindi!");
 
 
                 }
@@ -215,16 +202,16 @@ public class prisonerWiew extends  JFrame {
     private void CreateTable(){
 
         String[] columnNames = {
-                "PrisonerID",   //int
-                "First Name",   //String
-                "Last Name",    //String
-                "Height",       //int
-                "Weight",       //int
-                "ReleaseDate",  //String
+                "Mahkum ID",   //int
+                "Ad",   //String
+                "Soyad",    //String
+                "Boy",       //int
+                "Kilo",       //int
+                "TahliyeTarihi",  //String
                 "TC",           //String
-                "Age",          //int
-                "Gender",        //String
-                "Punishment Time"//String
+                "Yaş",          //int
+                "Cinsiyet",        //String
+                "CezaSüresi"//String
 
         };
         model.setColumnIdentifiers(columnNames);

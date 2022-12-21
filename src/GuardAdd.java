@@ -13,6 +13,9 @@ public class GuardAdd extends  JFrame {
     private JButton addButton;
     private JButton returnBackButton;
     private JLabel MessageLabel;
+    private JLabel imageLabel;
+    private JPanel ImageAreaPanel;
+    private JButton resimSeçMax56KbButton;
 
     prisonStuff stuff =new prisonStuff();
 
@@ -20,7 +23,7 @@ public class GuardAdd extends  JFrame {
         add(DışPanel);
         setSize(900,540);
         setLocation(500,200);
-        setTitle("Prison Add");
+        setTitle("Gardiyan Ekle");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         returnBackButton.addActionListener(new ActionListener() {
             @Override
@@ -33,21 +36,27 @@ public class GuardAdd extends  JFrame {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                MessageLabel.setText("");
 
-                String name= nameText.getText();
-                String surname=lastNameText.getText();
-                String rank=rankText.getText();
-                int weight= Integer.parseInt(weightText.getText());
-                int height=Integer.parseInt(heightText.getText());
-                int age=Integer.parseInt(ageText.getText());
+                try {
+
+                    String name = nameText.getText();
+                    String surname = lastNameText.getText();
+                    String rank = rankText.getText();
+                    int weight = Integer.parseInt(weightText.getText());
+                    int height = Integer.parseInt(heightText.getText());
+                    int age = Integer.parseInt(ageText.getText());
 
 
-                stuff.addGuard(name,surname,rank,weight,height,age);
+                    stuff.addGuard(name, surname, rank, weight, height, age);
 
-                MessageLabel.setText("Adding was successfull!");
-
+                    MessageLabel.setText("Gardiyan Ekleme Başarılı");
+                }catch (NumberFormatException exception){
+                    MessageLabel.setText("Ekleme Başarısız! Boş Alanları Doldurunuz!");
+                    exception.printStackTrace();
+                }
             }
         });
     }
+
+
 }

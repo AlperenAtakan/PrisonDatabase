@@ -65,6 +65,7 @@
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-10395037"/>
           <foreground color="-10395037"/>
         </properties>
         <border type="none"/>
@@ -75,6 +76,7 @@
               <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10395037"/>
               <foreground color="-10395037"/>
             </properties>
             <border type="none"/>
@@ -96,6 +98,7 @@
               <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-4473925"/>
               <foreground color="-10395037"/>
             </properties>
             <border type="none"/>
@@ -315,7 +318,9 @@
             <constraints>
               <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-10395037"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="99a4" class="javax.swing.JLabel" binding="imageLabel">

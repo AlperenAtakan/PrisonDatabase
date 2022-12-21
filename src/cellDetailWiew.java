@@ -69,10 +69,10 @@ public class cellDetailWiew extends JFrame {
                 if (selected == -1) {
 
                     if (model.getRowCount() == 0) {
-                        messageLabel.setText("Empty Table");
+                        messageLabel.setText("Mahkum Tablosu Boş!");
                     }
                     else {
-                        messageLabel.setText("Select prisoner to update!");
+                        messageLabel.setText("Mahkum Seç! ");
                     }
                 }else{
                     cellDetailtableClicked=true;
@@ -93,7 +93,7 @@ public class cellDetailWiew extends JFrame {
                     int age= (int) model.getValueAt(selected, 7);
 
                     int gender;
-                    if ( model.getValueAt(selected, 8).equals("Male")){
+                    if ( model.getValueAt(selected, 8).equals("Erkek")){
                         gender=1;
 
                     }else {
@@ -124,7 +124,7 @@ public class cellDetailWiew extends JFrame {
                     setVisible(false);
                     prisonerUpdate.setVisible(true);
                 }else {
-                    messageLabel.setText("Select Prisoner Then Click Button!");
+                    messageLabel.setText("Öncelikle mahkum seç daha sonra butona tıkla!");
                 }
             }
         });
@@ -132,16 +132,16 @@ public class cellDetailWiew extends JFrame {
 
    public void CreateTable(){
         String[] columnNames = {
-                "PrisonerID",   //int
-                "First Name",   //String
-                "Last Name",    //String
-                "Height",       //int
-                "Weight",       //int
-                "ReleaseDate",  //String
+                "Mahkum ID",   //int
+                "Ad",   //String
+                "Soyad",    //String
+                "Boy",       //int
+                "Kilo",       //int
+                "TahliyeTarihi",  //String
                 "TC",           //String
-                "Age",          //int
-                "Gender",        //String
-                "Punishment Time"//String
+                "Yaş",          //int
+                "Cinsiyet",        //String
+                "Ceza Süresi"//String
 
         };
         model.setColumnIdentifiers(columnNames);

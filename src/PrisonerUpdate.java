@@ -57,7 +57,7 @@ public class PrisonerUpdate extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                messageLabel.setText("");
+                messageLabel.setText(" ");
 
 
 
@@ -72,20 +72,10 @@ public class PrisonerUpdate extends JFrame{
                 String gender= (prisonerGender.getText());
                 int punishmenttime= Integer.parseInt(prisonerPunishmenttime.getText());
 
-             /*   System.out.println(ID);
-                System.out.println(name);
-                System.out.println(lastname);
-                System.out.println(height);
-                System.out.println(weight);
-                System.out.println(releaseDate);
-                System.out.println(TC);
-                System.out.println(age);
-                System.out.println(punishmenttime);
-              */
                 stuff.updatePrisoner(ID,name,lastname,height,weight,releaseDate,TC,age,gender,punishmenttime);
 
 
-                messageLabel.setText("Update was successfull!");
+                messageLabel.setText("Mahkum Bilgileri Güncelleme Başarılı!");
 
 
             }
