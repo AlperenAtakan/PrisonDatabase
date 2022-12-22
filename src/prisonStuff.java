@@ -293,7 +293,7 @@ public class prisonStuff {
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
-            System.out.println("Update guard failed");
+            System.out.println("Gardiyen güncelleme başarısız SQL");
             throw new RuntimeException(e);
         }
     }
@@ -522,8 +522,8 @@ public class prisonStuff {
         }
 
     }
-    public void updateEmployee(int id ,String name,String lastname,String department,String authority,String job) {
-        String sorgu =  "Update employee set employee_name = ? , employee_surname = ? , employee_department = ? , employee_authority = ?, employee_job = ?  idemployee = ?";
+    public void updateEmployee(int id ,String name,String lastname,String department,String job) {
+        String sorgu =  "Update employee set employee_name = ? , employee_surname = ? , employee_department = ? , employee_job = ?  idemployee = ?";
 
         try {
             preparedStatement = con.prepareStatement(sorgu);
@@ -532,9 +532,8 @@ public class prisonStuff {
             preparedStatement.setString(1, name);
             preparedStatement.setString(2, lastname);
             preparedStatement.setString(3, department);
-            preparedStatement.setString(4, authority);
-            preparedStatement.setString(5, job);
-            preparedStatement.setInt(6,id);
+            preparedStatement.setString(4, job);
+            preparedStatement.setInt(5,id);
 
             preparedStatement.executeUpdate();
 
@@ -566,17 +565,44 @@ public class prisonStuff {
 
                 String department=rs.getString("employee_department");
 
-                String authority=rs.getString("employee_authority");
-
                 String job= rs.getString("employee_job");
 
-                data.add(new Employee(id,name,surname,department,authority,job));
+                data.add(new Employee(id,name,surname,department,job));
 
             }
             return data;
 
         } catch (SQLException e) {
             System.out.println("Employee Veritabanına ulaşılamadı");
+            return null;
+        }
+    }
+
+    public ArrayList<Food> getFood(){
+        ArrayList<Food> data=new ArrayList<Food>();
+
+        try {
+            statement = con.createStatement();
+
+            String Foodsorgu="Select * From dinner";
+
+            ResultSet rs=statement.executeQuery(Foodsorgu);
+
+            while (rs.next()){
+
+                int ID =rs.getInt("iddinner");
+                String name=rs.getString("dinner_name");
+                int cost = rs.getInt("dinner_cost");
+                int count = rs.getInt("dinner_count");
+                String day=rs.getString("dinner_day");
+
+                data.add(new Food(ID,cost,count,name,day));
+
+            }
+            return data;
+
+        } catch (SQLException e) {
+            System.out.println("Food Veritabanına ulaşılamadı");
             return null;
         }
     }

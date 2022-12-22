@@ -89,15 +89,19 @@ public class AuthorityScreen0  extends JFrame{
 
                 } else if (tableRowName.equals("Personeller")) {
 
-
-
+                    employeeWiew employeeWiew=new employeeWiew();
+                    setVisible(false);
+                    employeeWiew.setVisible(true);
 
                 } else if (tableRowName.equals("Yemekler")) {
 
-
+                    FoodWiew foodWiew =new FoodWiew();
+                    setVisible(false);
+                    foodWiew.setVisible(true);
                 } else if (tableRowName.equals("Giderler")) {
                     
                 } else if (tableRowName.equals("Gardiyanlar")) {
+
                     guardWiew guardWiew = new guardWiew();
                     setVisible(false);
                     guardWiew.setVisible(true);

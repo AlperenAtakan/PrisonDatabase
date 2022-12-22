@@ -23,9 +23,8 @@ public class GuardUpdate extends JFrame {
         add(DışPanel);
         setSize(900,540);
         setLocation(500,200);
-        setTitle("Guard Update");
+        setTitle("Gardiyan Güncelleme/Görüntüleme");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
 
         idText.setText( guardWiew.guardDatas[0].toString());
         nameText.setText( guardWiew.guardDatas[1].toString());
@@ -34,8 +33,6 @@ public class GuardUpdate extends JFrame {
         weightText.setText( guardWiew.guardDatas[4].toString());
         heightText.setText(guardWiew.guardDatas[5].toString());
         ageText.setText(guardWiew.guardDatas[6].toString());
-
-
 
         returnBackButton.addActionListener(new ActionListener() {
             @Override
@@ -60,12 +57,9 @@ public class GuardUpdate extends JFrame {
                 int height= Integer.parseInt(heightText.getText());
                 int age= Integer.parseInt(ageText.getText());
 
-
                 stuff.updateGuard(ID,name,lastname,rank,weight,height,age);
 
-
-
-                messageLabel.setText("Update was successfull!");
+                messageLabel.setText("Güncelleme Başarılı!");
             }
         });
     }

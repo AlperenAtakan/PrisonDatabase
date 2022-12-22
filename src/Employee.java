@@ -1,11 +1,10 @@
 public class Employee {
     private int employeeID;
-    private String employeeName,employeeLastName,department,authority,job;
+    private String employeeName,employeeLastName,department,job;
 
-    public Employee(int employeeID,String employeeName, String employeeLastName, String department, String authority, String job ) {
+    public Employee(int employeeID,String employeeName, String employeeLastName, String department, String job ) {
         this.employeeID = employeeID;
         this.department=department;
-        this.authority = authority;
         this.job = job;
         this.employeeName = employeeName;
         this.employeeLastName = employeeLastName;
@@ -43,13 +42,6 @@ public class Employee {
         this.department = department;
     }
 
-    public String getAuthority() {
-        return authority;
-    }
-
-    public void setAuthority(String authority) {
-        this.authority = authority;
-    }
 
     public String getJob() {
         return job;
