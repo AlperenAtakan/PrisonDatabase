@@ -604,4 +604,33 @@ public class prisonStuff {
             return null;
         }
     }
+
+    public ArrayList<Expend> getExpend(){
+        ArrayList<Expend> data=new ArrayList<Expend>();
+
+        try {
+            statement = con.createStatement();
+
+            String expenseSorgu="Select * From expense";
+
+            ResultSet rs=statement.executeQuery(expenseSorgu);
+
+            while (rs.next()){
+
+                int ID =rs.getInt("idexpense");
+                String name=rs.getString("expense_name");
+                int cost = rs.getInt("expense_cost");
+                String type = rs.getString("expense_type");
+
+                data.add(new Expend(ID,cost,name,type));
+
+            }
+            return data;
+
+        } catch (SQLException e) {
+            System.out.println("Expense Veritabanına ulaşılamadı");
+            return null;
+        }
+
+    }
 }

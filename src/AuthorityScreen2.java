@@ -85,6 +85,9 @@ public class AuthorityScreen2 extends JFrame{
                     setVisible(false);
                     foodWiew.setVisible(true);
                 } else if (tableRowName.equals("Giderler")) {
+                    expendsWiew expendsWiew=new expendsWiew();
+                    setVisible(false);
+                    expendsWiew.setVisible(true);
                 }
                  else {
                     messageLabel.setText("Öncelikle Bir Tablo Seçin !");

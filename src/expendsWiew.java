@@ -4,20 +4,22 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class FoodWiew extends JFrame {
+public class expendsWiew extends JFrame{
     private JPanel DışPanel;
-    private JTable foodTable;
+    private JTable expenseTable;
     private JButton returnBackButton;
+
     DefaultTableModel model;
     prisonStuff stuff=new prisonStuff();
 
-    public FoodWiew(){
-        model = (DefaultTableModel) foodTable.getModel();
+    public expendsWiew() {
+
+        model = (DefaultTableModel) expenseTable.getModel();
         add(DışPanel);
         DışPanel.setVisible(true);
         setSize(900,540);
         setLocation(500,200);
-        setTitle("Yemek Tablosu");
+        setTitle("Gider Tablosu");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         CreateTable();
 
@@ -25,6 +27,7 @@ public class FoodWiew extends JFrame {
         returnBackButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 if (LoginScreen.level==0){
                     AuthorityScreen0 authorityScreen0=new AuthorityScreen0();
                     setVisible(false);
@@ -41,35 +44,38 @@ public class FoodWiew extends JFrame {
             }
         });
     }
+
+
     private void CreateTable(){
 
         String[] columnNames = {
-                "Yemek Adı",   //String
+
+                "Gider Adı",   //String
                 "Maliyet",   //int
-                "Adet",    //int
-                "Gün",       //String
+                "Tipi",       //String
         };
         model.setColumnIdentifiers(columnNames);
 
-        getFood();
+        getExpense();
     }
 
-    public void getFood(){
+    public void getExpense(){
 
         model.setRowCount(0);
 
-        ArrayList<Food> foods =new ArrayList<Food>();
+        ArrayList<Expend> expends =new ArrayList<Expend>();
 
-        foods=stuff.getFood();
-        if (foods!=null){
+        expends=stuff.getExpend();
+        if (expends!=null){
 
             System.out.println("Bağlantı Başarılı!");
-            for (Food food: foods){
-                Object[]add={food.getName(),food.getCost(),food.getCount(),food.getDay()};
+            for (Expend expend: expends){
+                Object[]add={expend.getName(),expend.getCost(),expend.getType()};
 
                 model.addRow(add);
 
             }
         }
     }
+
 }
