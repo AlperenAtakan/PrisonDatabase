@@ -34,7 +34,7 @@ public class PrisonerAdd extends JFrame{
         add(DışPanel);
         setSize(900,540);
         setLocation(500,200);
-        setTitle("Prison Add");
+        setTitle("Mahkum Ekleme");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         addButton.addActionListener(new ActionListener() {

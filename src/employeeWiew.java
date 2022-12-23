@@ -1,16 +1,14 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import javax.swing.table.TableRowSorter;
+import java.awt.event.*;
 import java.util.ArrayList;
 
 public class employeeWiew extends JFrame {
 
 
     private JPanel DışPanel;
-    private JTextField personelSearchText;
+    private JTextField SearchText;
     private JTable personelTable;
     private JLabel messageLabel;
     private JButton returnBackButton;
@@ -53,9 +51,9 @@ public class employeeWiew extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (EmployeetableClicked){
-                    PrisonerUpdate prisonerUpdate = new PrisonerUpdate();
+                    EmployeeUpdate employeeUpdate=new EmployeeUpdate();
                     setVisible(false);
-                    prisonerUpdate.setVisible(true);
+                    employeeUpdate.setVisible(true);
                 }else {
                     messageLabel.setText("Güncellemek için Personel seç!");
                 }
@@ -120,15 +118,39 @@ public class employeeWiew extends JFrame {
 
                     int id=(int)model.getValueAt(selected,0);
 
-                    stuff.deletePrisoner(id);
+                    stuff.deleteEmployee(id);
                     CreateTable();
-
                     messageLabel.setText("Personel Başarıyla Silindi!");
 
 
                 }
             }
         });
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                EmployeeAdd employeeAdd=new EmployeeAdd();
+                setVisible(false);
+                employeeAdd.setVisible(true);
+            }
+        });
+        SearchText.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                super.keyReleased(e);
+                String searh= SearchText.getText();
+
+                dynamicSearc(searh);
+            }
+        });
+
+    }
+    public void dynamicSearc(String text){
+        TableRowSorter<DefaultTableModel> tr=new TableRowSorter<DefaultTableModel>(model);
+
+        personelTable.setRowSorter(tr);
+
+        tr.setRowFilter(RowFilter.regexFilter(text));
     }
     private void CreateTable(){
 
@@ -162,6 +184,7 @@ public class employeeWiew extends JFrame {
             }
         }
     }
+
 
 
 

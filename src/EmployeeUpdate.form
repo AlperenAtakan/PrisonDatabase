@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="EmployeeUpdate">
+  <grid id="27dc6" binding="DışPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="20" left="20" bottom="20" right="20"/>
+    <constraints>
+      <xy x="20" y="20" width="827" height="498"/>
+    </constraints>
+    <properties>
+      <background color="-10395037"/>
+      <foreground color="-10395037"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="f230d" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="10" left="10" bottom="10" right="10"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-10395037"/>
+          <foreground color="-10395037"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="85f81" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="10" left="10" bottom="10" right="10"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-10395037"/>
+              <foreground color="-10395037"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="30c74" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Times New Roman" size="28" style="1"/>
+                  <text value="PERSONEL GÜNCELLEME/GÖRÜNTÜLEME EKRANI"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="65306" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="10" left="10" bottom="10" right="10"/>
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-4473925"/>
+              <font name="Times New Roman" size="14" style="1"/>
+              <foreground color="-10395037"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="72dae" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Times New Roman" size="14" style="1"/>
+                  <foreground color="-10395037"/>
+                  <text value="ID"/>
+                </properties>
+              </component>
+              <component id="16a15" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Times New Roman" size="14" style="1"/>
+                  <foreground color="-10395037"/>
+                  <text value="Ad"/>
+                </properties>
+              </component>
+              <component id="b938" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Times New Roman" size="14" style="1"/>
+                  <foreground color="-10395037"/>
+                  <text value="Soyad"/>
+                </properties>
+              </component>
+              <component id="9c686" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Times New Roman" size="14" style="1"/>
+                  <foreground color="-10395037"/>
+                  <text value="Departman"/>
+                </properties>
+              </component>
+              <component id="8d78c" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Times New Roman" size="14" style="1"/>
+                  <foreground color="-10395037"/>
+                  <text value="İş"/>
+                </properties>
+              </component>
+              <component id="8faa1" class="javax.swing.JTextField" binding="personelJobText">
+                <constraints>
+                  <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <font name="Times New Roman" size="14" style="1"/>
+                </properties>
+              </component>
+              <component id="10275" class="javax.swing.JTextField" binding="personelDepartmantText">
+                <constraints>
+                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <font name="Times New Roman" size="14" style="1"/>
+                </properties>
+              </component>
+              <component id="f3b64" class="javax.swing.JTextField" binding="personelLastNameText">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <font name="Times New Roman" size="14" style="1"/>
+                </properties>
+              </component>
+              <component id="fe60c" class="javax.swing.JTextField" binding="personelNameText">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <font name="Times New Roman" size="14" style="1"/>
+                </properties>
+              </component>
+              <component id="743a6" class="javax.swing.JTextField" binding="personelIDtext">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <editable value="false"/>
+                  <font name="Times New Roman" size="14" style="1"/>
+                </properties>
+              </component>
+              <component id="1b0bd" class="javax.swing.JLabel" binding="messageLabel">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Times New Roman" size="16" style="1"/>
+                  <text value="Mesaj"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="c420e" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-10395037"/>
+              <foreground color="-10395037"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </grid>
+        </children>
+      </grid>
+      <grid id="d917d" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="10" left="10" bottom="10" right="10"/>
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-10395037"/>
+          <foreground color="-10395037"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="3d515" class="javax.swing.JButton" binding="updateButton">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Times New Roman" size="14" style="1"/>
+              <text value="Güncelle"/>
+            </properties>
+          </component>
+          <component id="f6d0b" class="javax.swing.JButton" binding="returnBackButton">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Times New Roman" size="14" style="1"/>
+              <text value="Geri Dön"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

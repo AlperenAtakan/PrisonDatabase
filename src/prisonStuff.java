@@ -267,7 +267,7 @@ public class prisonStuff {
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
-            System.out.println("Guard ekleme fail");
+            System.out.println("Gardiyan ekleme başarısız");
             throw new RuntimeException(e);
         }
 
@@ -500,30 +500,28 @@ public class prisonStuff {
             Logger.getLogger(prisonStuff.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public void addEmployee(String name,String lastname,String department,String authority,String job) {
+    public void addEmployee(String name,String lastname,String department,String job) {
 
-        String sorgu = "Insert Into employee(employee_name,employee_surname,employee_department,employee_authority,employee_job,employee_id) VALUES(?,?,?,?,?,?)";
+        String sorgu = "Insert Into employee(employee_name,employee_surname,employee_department,employee_job) VALUES(?,?,?,?)";
 
         try {
             preparedStatement = con.prepareStatement(sorgu);
 
-
             preparedStatement.setString(1, name);
             preparedStatement.setString(2, lastname);
             preparedStatement.setString(3, department);
-            preparedStatement.setString(4, authority);
-            preparedStatement.setString(5, job);
+            preparedStatement.setString(4, job);
 
             preparedStatement.executeUpdate();
 
         } catch (SQLException ex) {
-            System.out.println("Ekleme Başarısız!");
+            System.out.println("Personel Ekleme Başarısız!");
             Logger.getLogger(prisonStuff.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
     public void updateEmployee(int id ,String name,String lastname,String department,String job) {
-        String sorgu =  "Update employee set employee_name = ? , employee_surname = ? , employee_department = ? , employee_job = ?  idemployee = ?";
+        String sorgu =  "Update employee set employee_name = ? , employee_surname = ? , employee_department = ? , employee_job = ? where idemployee = ?";
 
         try {
             preparedStatement = con.prepareStatement(sorgu);
@@ -540,7 +538,7 @@ public class prisonStuff {
 
 
         } catch (SQLException ex) {
-            System.out.println("Update Başarısız");
+            System.out.println("Personel Güncelleme Başarısız");
             Logger.getLogger(prisonStuff.class.getName()).log(Level.SEVERE, null, ex);
         }
 
