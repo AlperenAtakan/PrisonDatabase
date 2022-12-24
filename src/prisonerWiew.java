@@ -112,7 +112,7 @@ public class prisonerWiew extends  JFrame {
                     int age= (int) model.getValueAt(selected, 7);
 
                     int gender;
-                    if ( model.getValueAt(selected, 8).equals("1")){
+                    if ( model.getValueAt(selected, 8).equals("Erkek")){
                         gender=1;
 
                     }else {

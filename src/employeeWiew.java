@@ -158,8 +158,8 @@ public class employeeWiew extends JFrame {
                 "Personel ID",   //int
                 "Ad",   //String
                 "Soyad",    //String
-                "Departman",       //String
-                "Job"      //String
+                "Bölüm",       //String
+                "İş"      //String
 
         };
         model.setColumnIdentifiers(columnNames);

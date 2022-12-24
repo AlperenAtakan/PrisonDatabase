@@ -120,7 +120,7 @@ public class PrisonerUpdate extends JFrame{
 
 
 
-                    ImageIcon imageIcon=new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(300,240, Image.SCALE_SMOOTH));
+                    ImageIcon imageIcon=new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(prisonerImageField.getWidth(),prisonerImageField.getHeight(), Image.SCALE_SMOOTH));
                     imageLabel.setIcon(imageIcon);
                     File image=new File(filename);
                     FileInputStream fis=new FileInputStream(image);

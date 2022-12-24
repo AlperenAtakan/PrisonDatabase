@@ -56,7 +56,7 @@ public class cellWiew2 extends  JFrame{
                 cellSize=10;
                 cellCapacity=2;
                 cell_Stuff_count=4;
-                cell_Prisoner_count=1;
+                cell_Prisoner_count=2;
 
                 cellDetaildatas[0]=cellID;
                 cellDetaildatas[1]=cellSize;
@@ -80,7 +80,7 @@ public class cellWiew2 extends  JFrame{
                 cellSize=15;
                 cellCapacity=3;
                 cell_Stuff_count=4;
-                cell_Prisoner_count=2;
+                cell_Prisoner_count=3;
 
                 cellDetaildatas[0]=cellID;
                 cellDetaildatas[1]=cellSize;
@@ -102,7 +102,7 @@ public class cellWiew2 extends  JFrame{
                 cellSize=20;
                 cellCapacity=4;
                 cell_Stuff_count=5;
-                cell_Prisoner_count=3;
+                cell_Prisoner_count=4;
 
                 cellDetaildatas[0]=cellID;
                 cellDetaildatas[1]=cellSize;
@@ -145,9 +145,9 @@ public class cellWiew2 extends  JFrame{
 
                 cellID=5;
                 cellSize=30;
-                cellCapacity=6;
+                cellCapacity=2;
                 cell_Stuff_count=6;
-                cell_Prisoner_count=5;
+                cell_Prisoner_count=2;
 
                 cellDetaildatas[0]=cellID;
                 cellDetaildatas[1]=cellSize;
@@ -169,7 +169,7 @@ public class cellWiew2 extends  JFrame{
                 cellSize=15;
                 cellCapacity=3;
                 cell_Stuff_count=4;
-                cell_Prisoner_count=2;
+                cell_Prisoner_count=3;
 
                 cellDetaildatas[0]=cellID;
                 cellDetaildatas[1]=cellSize;

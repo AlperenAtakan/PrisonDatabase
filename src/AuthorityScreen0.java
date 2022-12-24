@@ -72,6 +72,7 @@ public class AuthorityScreen0  extends JFrame{
             public void actionPerformed(ActionEvent e) {
 
 
+
                 if (tableRowName.equals("Yetkililer")){
 
 
@@ -124,7 +125,6 @@ public class AuthorityScreen0  extends JFrame{
         };
 
         String[] rawNames={
-                "Yetkililer",
                 "Mahkumlar",
                 "Hücreler",
                 "Gardiyanlar",

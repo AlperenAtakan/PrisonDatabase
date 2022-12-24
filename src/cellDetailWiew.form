@@ -100,7 +100,7 @@
                 </constraints>
                 <properties>
                   <font name="Times New Roman" size="14" style="1"/>
-                  <text value="Size"/>
+                  <text value="Boyut(m² )"/>
                 </properties>
               </component>
               <component id="9ec70" class="javax.swing.JLabel">
@@ -109,7 +109,7 @@
                 </constraints>
                 <properties>
                   <font name="Times New Roman" size="14" style="1"/>
-                  <text value="Capacity"/>
+                  <text value="Kapasite"/>
                 </properties>
               </component>
               <component id="6c4ee" class="javax.swing.JLabel">
@@ -118,7 +118,7 @@
                 </constraints>
                 <properties>
                   <font name="Times New Roman" size="14" style="1"/>
-                  <text value="StuffCount"/>
+                  <text value="Eşya Sayısı"/>
                 </properties>
               </component>
               <component id="49cd5" class="javax.swing.JLabel">
@@ -127,7 +127,7 @@
                 </constraints>
                 <properties>
                   <font name="Times New Roman" size="14" style="1"/>
-                  <text value="PrisonerCount"/>
+                  <text value="Mahkum Sayısı"/>
                 </properties>
               </component>
               <component id="1cac5" class="javax.swing.JTextField" binding="cellIDText">
@@ -230,7 +230,7 @@
             <properties>
               <font name="Times New Roman" size="14" style="1"/>
               <foreground color="-10395037"/>
-              <text value="PrisonerDetail"/>
+              <text value="Mahkum Detay"/>
             </properties>
           </component>
           <component id="3cc96" class="javax.swing.JButton" binding="returnBackButton" default-binding="true">
@@ -240,7 +240,7 @@
             <properties>
               <font name="Times New Roman" size="14" style="1"/>
               <foreground color="-10395037"/>
-              <text value="Return Back"/>
+              <text value="Geri Dön"/>
             </properties>
           </component>
         </children>
