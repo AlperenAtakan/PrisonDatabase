@@ -1,10 +1,10 @@
 public class Prisoner {
-   private int prisonerID,weight,height,age,punishmenTime;
-   private String prisonerName,prisonerLastName,gender,TC,releaseDate;
+   private int prisonerID,weight,height,age,punishmenTime,gender;
+   private String prisonerName,prisonerLastName,TC,releaseDate;
 
    private byte[] image;
 
-    public Prisoner(int prisonerID,String prisonerName, String prisonerLastName, int height, int weight, String releaseDate, String TC, int age,String gender ,int punishmentTime , byte[] image) {
+    public Prisoner(int prisonerID,String prisonerName, String prisonerLastName, int height, int weight, String releaseDate, String TC, int age,int gender ,int punishmentTime , byte[] image) {
         this.prisonerID = prisonerID;
         this.weight = weight;
         this.height = height;
@@ -82,11 +82,11 @@ public class Prisoner {
         this.prisonerLastName = prisonerLastName;
     }
 
-    public String getGender() {
+    public int getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(int gender) {
         this.gender = gender;
     }
 

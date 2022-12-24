@@ -22,8 +22,9 @@ public class prisonerWiew extends  JFrame {
     DefaultTableModel model;
     prisonStuff stuff=new prisonStuff();
 
+    public  static Prisoner prisoner;
 
-    public static Object[] prisonerDatas= new Object[10];
+    public static Object[] prisonerDatas= new Object[11];
     static boolean tableClicked=false;
     public prisonerWiew() {
 
@@ -111,7 +112,7 @@ public class prisonerWiew extends  JFrame {
                     int age= (int) model.getValueAt(selected, 7);
 
                     int gender;
-                    if ( model.getValueAt(selected, 8).equals("Erkek")){
+                    if ( model.getValueAt(selected, 8).equals("1")){
                         gender=1;
 
                     }else {
@@ -120,7 +121,9 @@ public class prisonerWiew extends  JFrame {
 
 
                     int punishmenttime= (int) model.getValueAt(selected, 9);
+                    byte[] photo=(byte[])model.getValueAt(selected,10);
 
+                    prisoner=new Prisoner(ID,name,lastname,height,weight,releaseDate,TC,age,gender,punishmenttime,photo);
 
                     prisonerDatas[0] =ID;
                     prisonerDatas[1] =name;
@@ -211,11 +214,10 @@ public class prisonerWiew extends  JFrame {
                 "TC",           //String
                 "Yaş",          //int
                 "Cinsiyet",        //String
-                "CezaSüresi"//String
-
+                "CezaSüresi",//String
+                "Resim"//Byte[]
         };
         model.setColumnIdentifiers(columnNames);
-
 
         getPrisoner();
 
@@ -233,9 +235,8 @@ public class prisonerWiew extends  JFrame {
             System.out.println("Bağlantı Başarılı!");
             for (Prisoner prisoner: prisoners){
                 Object[]add={prisoner.getPrisonerID(),prisoner.getPrisonerName(),prisoner.getPrisonerLastName(),
-                prisoner.getHeight(),prisoner.getWeight(),prisoner.getReleaseDate(),prisoner.getTC(),prisoner.getAge(),prisoner.getGender(),prisoner.getPunishmenTime()};
+                prisoner.getHeight(),prisoner.getWeight(),prisoner.getReleaseDate(),prisoner.getTC(),prisoner.getAge(),prisoner.getGender(),prisoner.getPunishmenTime(),prisoner.getImage()};
 
-                Object[] tablo1={prisoner.getPrisonerID(),prisoner.getPrisonerName(),prisoner.getPrisonerLastName()};
                 model.addRow(add);
 
             }
