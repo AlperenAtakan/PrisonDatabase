@@ -58,7 +58,7 @@
                 <constraints/>
                 <properties>
                   <autoCreateRowSorter value="true"/>
-                  <autoResizeMode value="4"/>
+                  <autoResizeMode value="1"/>
                   <background color="-10395037"/>
                   <cellSelectionEnabled value="false"/>
                   <columnSelectionAllowed value="false"/>

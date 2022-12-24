@@ -50,7 +50,12 @@ public class PrisonerAdd extends JFrame{
                     String releaseDate=prisonerReleaseDate.getText();
                     String TC=prisonerTC.getText();
                     int age= Integer.parseInt(prisonerAge.getText());
-                    int gender= Integer.parseInt(prisonerGender.getText());
+                    int gender;
+                    if (prisonerGender.getText().equals("Erkek")){
+                        gender=1;
+                    }else{
+                        gender=0;
+                    }
                     int punishmentTime= Integer.parseInt(prisonerPunishmentTime.getText());
                     byte[] image=prisonerImage;
                     if (image==null){

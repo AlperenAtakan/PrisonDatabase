@@ -1,6 +1,10 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 
 public class PrisonerUpdate extends JFrame{
 
@@ -23,6 +27,9 @@ public class PrisonerUpdate extends JFrame{
     private JTextField prisonerLastname;
     private JLabel imageLabel;
     private JPanel prisonerImageField;
+    private JButton imageChooseButton;
+    byte [] prisoner_photo=null;
+    String filename=null;
 
 
     public PrisonerUpdate(){
@@ -42,8 +49,10 @@ public class PrisonerUpdate extends JFrame{
         prisonerReleaseDate.setText((String)prisonerWiew.prisonerDatas[5]);
         prisonerTC.setText((String) prisonerWiew.prisonerDatas[6]);
         prisonerAge.setText(prisonerWiew.prisonerDatas[7].toString());
-
-        if (prisonerWiew.prisonerDatas[8].equals("1")){
+        byte[] byte_photo = prisonerWiew.prisoner.getImage();
+        ImageIcon imageIcon=new ImageIcon(new ImageIcon(byte_photo).getImage().getScaledInstance(300,240, Image.SCALE_SMOOTH));
+        imageLabel.setIcon(imageIcon);
+        if (prisonerWiew.prisonerDatas[8].toString().equals("1")){
 
             prisonerGender.setText("Erkek");
         }else {
@@ -70,9 +79,17 @@ public class PrisonerUpdate extends JFrame{
                 String TC=prisonerTC.getText();
                 int age= Integer.parseInt(prisonerAge.getText());
                 String gender= (prisonerGender.getText());
+                int gender1;
+                if (gender.equals("Erkek")){
+                    gender1=1;
+                }else{
+                    gender1=0;
+                }
                 int punishmenttime= Integer.parseInt(prisonerPunishmenttime.getText());
+                byte[] photo = prisoner_photo;
 
-                stuff.updatePrisoner(ID,name,lastname,height,weight,releaseDate,TC,age,gender,punishmenttime);
+
+                stuff.updatePrisoner(ID,name,lastname,height,weight,releaseDate,TC,age,gender1,punishmenttime,photo);
 
 
                 messageLabel.setText("Mahkum Bilgileri Güncelleme Başarılı!");
@@ -87,6 +104,38 @@ public class PrisonerUpdate extends JFrame{
                 setVisible(false);
                 prisonerWiew prisonerWiew= new prisonerWiew();
                 prisonerWiew.setVisible(true);
+            }
+        });
+        imageChooseButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+
+                try{
+                    JFileChooser chooser=new JFileChooser();
+                    chooser.showOpenDialog(null);
+                    File f=chooser.getSelectedFile();
+                    filename=f.getAbsolutePath();
+
+
+
+                    ImageIcon imageIcon=new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(300,240, Image.SCALE_SMOOTH));
+                    imageLabel.setIcon(imageIcon);
+                    File image=new File(filename);
+                    FileInputStream fis=new FileInputStream(image);
+                    ByteArrayOutputStream bos =new ByteArrayOutputStream();
+                    byte[] buf=new byte [1024];
+                    for (int readNum;(readNum=fis.read(buf))!=-1;){
+                        bos.write(buf,0,readNum);
+                    }
+                    prisoner_photo= bos.toByteArray();
+
+                }catch (Exception exception){
+                    messageLabel.setText("Resim seçme hatalı!");
+                    exception.printStackTrace();
+                }
+
             }
         });
     }

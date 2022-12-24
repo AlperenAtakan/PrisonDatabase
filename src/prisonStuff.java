@@ -141,13 +141,13 @@ public class prisonStuff {
             preparedStatement.setString(6, releaseDate);
             preparedStatement.setString(7, TC);
             preparedStatement.setInt(8, age);
-            boolean gender1;
+            int gender1;
             if (gender==1){
-                gender1=true;
+                gender1=1;
             }else {
-                gender1=false;
+                gender1=0;
             }
-            preparedStatement.setBoolean(9,gender1 );
+            preparedStatement.setInt(9,gender1 );
             preparedStatement.setInt(10, punishmentTime);
             preparedStatement.setBytes(5,image);
 
@@ -160,8 +160,8 @@ public class prisonStuff {
         }
     }
 
-    public void updatePrisoner(int id ,String name,String lastname,int height,int weight,String releaseDate,String TC,int age,String gender,int punishmentTime) {
-        String sorgu =  "Update prisoner set prisoner_name = ? , prisoner_surname = ? , prisoner_height = ? , prisoner_weight = ?, prisoner_release_date = ? , prisoner_TC = ? , prisoner_age = ? , prisoner_gender = ? , prisoner_punishment_time = ? where idprisoner = ?";
+    public void updatePrisoner(int id ,String name,String lastname,int height,int weight,String releaseDate,String TC,int age,int gender,int punishmentTime,byte[] image) {
+        String sorgu =  "Update prisoner set prisoner_name = ? , prisoner_surname = ? , prisoner_height = ? , prisoner_weight = ?, prisoner_release_date = ? , prisoner_TC = ? , prisoner_age = ? , prisoner_gender = ? , prisoner_punishment_time = ?,prisoner_photo = ? where idprisoner = ?";
 
         try {
             preparedStatement = con.prepareStatement(sorgu);
@@ -174,16 +174,10 @@ public class prisonStuff {
             preparedStatement.setString(5, releaseDate);
             preparedStatement.setString(6, TC);
             preparedStatement.setInt(7, age);
-
-            boolean gender1=true;
-            if (gender.equals("Male")){
-                gender1=true;
-            }else {
-                gender1=false;
-            }
-            preparedStatement.setBoolean(8,gender1 );
+            preparedStatement.setInt(8,gender );
             preparedStatement.setInt(9, punishmentTime);
-            preparedStatement.setInt(10,id);
+            preparedStatement.setBytes(10,image);
+            preparedStatement.setInt(11,id);
 
             preparedStatement.executeUpdate();
 
@@ -224,12 +218,7 @@ public class prisonStuff {
 
                 int age=rs.getInt("prisoner_age");
 
-                String gender;
-                if (rs.getBoolean("prisoner_gender")){
-                    gender="Male";
-                }else {
-                     gender="Female";
-                }
+                int gender=rs.getInt("prisoner_gender");
 
                 int punishmentTime=rs.getInt("prisoner_punishment_time");
 
@@ -465,14 +454,10 @@ public class prisonStuff {
 
                 int age=rs.getInt("prisoner_age");
 
-                String gender;
-                if (rs.getBoolean("prisoner_gender")){
-                    gender="Male";
-                }else {
-                    gender="Female";
-                }
+                int gender=rs.getInt("prisoner_gender");
 
                 int punishmentTime=rs.getInt("prisoner_punishment_time");
+
                 byte[] image=rs.getBytes("prisoner_photo");
                 cellPrisoners.add(new Prisoner(id,name,surname,height,weight,releaseDate,TC,age,gender,punishmentTime,image));
             }
